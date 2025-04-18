@@ -1,5 +1,16 @@
-#include "../fdf.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   set_image.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lucas-do <lucas-do@student.42.rio>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/17 20:13:13 by lucas-do          #+#    #+#             */
+/*   Updated: 2025/04/17 20:13:18 by lucas-do         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "../fdf.h"
 
 static void	initial_(t_coords *coords, t_fdf_gen *data)
 {
@@ -43,7 +54,6 @@ static void	bresehnam(t_coords coords, t_fdf_gen *data)
 
 static void	drawing(t_coords *coords, t_fdf_gen *data)
 {
-
 	if (coords->x < data->data->width - 1)
 	{
 		coords->x1 = coords->x + 1;
@@ -58,7 +68,6 @@ static void	drawing(t_coords *coords, t_fdf_gen *data)
 	}
 }
 
-
 void	insert_image(t_fdf_gen *data)
 {
 	t_coords	coords;
@@ -68,7 +77,7 @@ void	insert_image(t_fdf_gen *data)
 	while (coords.y < data->data->height)
 	{
 		coords.x = 0;
-		while( coords.x < data->data->width)
+		while (coords.x < data->data->width)
 		{
 			drawing(&coords, data);
 			coords.x++;

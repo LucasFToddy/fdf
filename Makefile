@@ -1,6 +1,4 @@
 NAME= fdf
-PATH_PRINTF=./ft_printf/
-PRINTF=./ft_printf/ft_printf.a
 
 PATH_LIBFT=./libft/
 LIBFT=./libft/libft.a
@@ -11,7 +9,7 @@ GNL=./gnl/get_next_line.a
 MINILIB_PATH=./minilibx-linux/
 MINILIB=./minilibx-linux/libmlx.a
 
-SRC = 	fdf.c read_map/read_map.c image/set_image.c image/trace_line.c image/isometric.c image/design.c hooks/hooks.c create_clear/create_and_clear.c
+SRC = 	fdf.c read_map/read_map.c read_map/read_map_utilit.c image/set_image.c image/trace_line.c image/isometric.c image/design.c hooks/hooks.c create_clear/create_and_clear.c
 
 CC= cc
 
@@ -21,16 +19,13 @@ FDFFLAG= -Lminilibx-linux -lmlx_Linux -lX11 -lXext -lm  -L -lmlx -lz
 
 OBJ= $(SRC:.c=.o)
 
-all: $(PRINTF) $(GNL) $(LIBFT) $(NAME)
+all: $(GNL) $(LIBFT) $(MINILIB) $(NAME)
 
 .c.o:
 	$(CC) $(CFLAG) -c $< -o $(<:.c=.o)
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAG) $(OBJ) $(PRINTF) $(GNL) $(LIBFT) $(MINILIB) $(FDFFLAG)  -o $(NAME) 
-
-$(PRINTF): 
-	@make -C $(PATH_PRINTF)
+	$(CC) $(CFLAG) $(OBJ) $(GNL) $(LIBFT) $(MINILIB) $(FDFFLAG)  -o $(NAME) 
 
 $(LIBFT):
 	@make -C $(PATH_LIBFT)
@@ -43,13 +38,11 @@ $(MINILIB):
 
 clean:
 	rm -rf $(OBJ)
-	@make -C $(PATH_PRINTF) clean
 	@make -C $(PATH_LIBFT) clean
 	@make -C $(PATH_GNL) clean
 
 fclean:clean
 	rm -rf $(NAME)
-	@make -C $(PATH_PRINTF) fclean
 	@make -C $(PATH_LIBFT) fclean
 	@make -C $(PATH_GNL) fclean
 
