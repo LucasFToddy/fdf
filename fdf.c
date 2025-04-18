@@ -76,7 +76,10 @@ int	main(int argc, char **argv)
 	if (!init_structs(&data))
 		return (0);
 	if (!read_file(argv[1], data.data))
+	{
+		free_general(&data);
 		return (0);
+	}
 	if (init_mlx(&data))
 	{
 		make_img(&data);
@@ -84,9 +87,7 @@ int	main(int argc, char **argv)
 		mlx_hook(data.data->win_ptr, 17, 0, close_win, &data);
 		mlx_loop(data.data->mlx_ptr);
 	}
-	mlx_destroy_window(data.data->mlx_ptr, data.data->win_ptr);
-	mlx_destroy_display(data.data->mlx_ptr);
-	free(data.data->mlx_ptr);
-	free_matrix(data.data);
+	free_pointer_server(&data);
+	free_general(&data);
 	return (0);
 }

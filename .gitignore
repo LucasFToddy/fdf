@@ -2,3 +2,5 @@
 /sources
 /maps
 *.json
+*.fdf
+fdf_linux

@@ -47,6 +47,11 @@ void	fill_matriz(t_point *z_line, char *line)
 
 	i = 0;
 	list_ = ft_split(line, ' ');
+	if (!list_)
+	{
+		free(list_);
+		return ;
+	}
 	while (list_[i])
 	{
 		z_line[i].value = ft_atoi(list_[i]);

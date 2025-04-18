@@ -24,9 +24,12 @@ void	clear_window(t_fdf_gen *data)
 
 void	free_general(t_fdf_gen *data)
 {
-	free(data->data);
-	free(data->design);
-	free(data->img_data);
+	if (data->data)
+		free(data->data);
+	if (data->design)
+		free(data->design);
+	if (data->img_data)
+		free(data->img_data);
 }
 
 void	free_matrix(t_fdf *data)
@@ -40,7 +43,7 @@ void	free_matrix(t_fdf *data)
 	{
 		while (i < data->height * data->width)
 		{
-			if (data->z_matrix[i].color)
+			if (data->z_matrix[i].color)''
 				free(data->z_matrix[i].color);
 			i++;
 		}
@@ -82,4 +85,26 @@ int	init_mlx(t_fdf_gen *data)
 	}
 	initial_design(data);
 	return (1);
+}
+
+int	free_pointer_server(t_fdf_gen *data)
+{
+	if (!data->data)
+		return (0);
+	if (data->data->mlx_ptr && data->data->win_ptr)
+	{
+		mlx_destroy_image(data->data->mlx_ptr, data->img_data->img_ptr);
+		mlx_destroy_window(data->data->mlx_ptr, data->data->win_ptr);
+		data->data->win_ptr = NULL;
+	}
+	if (data->data->mlx_ptr)
+	{
+		mlx_destroy_display(data->data->mlx_ptr);
+		free(data->data->mlx_ptr);
+		data->data->mlx_ptr = NULL;
+	}
+	if (data->data)
+		free_matrix(data->data);
+	data->data = NULL;
+	return (0);
 }

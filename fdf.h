@@ -105,5 +105,7 @@ void			isometric(float *x, float *y, int z, t_design *data);
 void			initial_design(t_fdf_gen *data);
 void			clear_window(t_fdf_gen *data);
 void			map_offset(t_design *design, t_coords *coords);
+void			free_general(t_fdf_gen *data);
+int				free_pointer_server(t_fdf_gen *data);
 
 #endif
