@@ -6,7 +6,7 @@
 /*   By: lucas-do <lucas-do@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 17:19:21 by lucas-do          #+#    #+#             */
-/*   Updated: 2024/11/23 14:35:12 by lucas-do         ###   ########.fr       */
+/*   Updated: 2025/04/18 11:49:12 by lucas-do         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 # ifndef BUFFER_SIZE
 
-#  define BUFFER_SIZE 1
+#  define BUFFER_SIZE 42
 
 # endif
 

@@ -6,7 +6,7 @@
 /*   By: lucas-do <lucas-do@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 20:14:56 by lucas-do          #+#    #+#             */
-/*   Updated: 2025/04/17 21:26:31 by lucas-do         ###   ########.fr       */
+/*   Updated: 2025/04/18 15:14:48 by lucas-do         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@
 # include <unistd.h>
 
 # define MALLOC_ERROR 1
-# define WIDTH 600
-# define HEIGHT 400
+# define WIDTH 1920
+# define HEIGHT 1080
 # define SCALE 50
 # define KEY_IN 105
 # define KEY_OUT 111
@@ -104,7 +104,7 @@ void			trace_line(float *x_end, float *y_end, t_coords *coords,
 void			isometric(float *x, float *y, int z, t_design *data);
 void			initial_design(t_fdf_gen *data);
 void			clear_window(t_fdf_gen *data);
-void			map_offset(t_design *design, t_coords *coords);
+void			map_offset(t_fdf_gen *design, t_coords *coords);
 void			free_general(t_fdf_gen *data);
 int				free_pointer_server(t_fdf_gen *data);
 

@@ -6,7 +6,7 @@
 /*   By: lucas-do <lucas-do@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 20:13:13 by lucas-do          #+#    #+#             */
-/*   Updated: 2025/04/17 20:13:18 by lucas-do         ###   ########.fr       */
+/*   Updated: 2025/04/18 15:22:23 by lucas-do         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,12 @@ static void	initial_(t_coords *coords, t_fdf_gen *data)
 	coords->y1 *= data->design->spacing;
 }
 
-static void	center_map(t_coords *coords, t_fdf_gen *data)
+void	center_map(t_coords *coords, t_fdf_gen *data)
 {
-	int	mid_wid;
-	int	mid_hig;
-
-	mid_wid = data->data->win_width / 2;
-	mid_hig = data->data->win_height / 2;
-	coords->x += (mid_wid - (data->data->width * data->design->spacing / 2));
-	coords->y += (mid_hig - (data->data->height * data->design->spacing / 2));
-	coords->x1 += (mid_wid - (data->data->width * data->design->spacing / 2));
-	coords->y1 += (mid_hig - (data->data->height * data->design->spacing / 2));
+	coords->x -= (data->data->width - 1) * data->design->spacing / 2.0;
+	coords->y -= (data->data->height - 1) * data->design->spacing / 2.0;
+	coords->x1 -= (data->data->width - 1) * data->design->spacing / 2.0;
+	coords->y1 -= (data->data->height - 1) * data->design->spacing / 2.0;
 }
 
 static void	bresehnam(t_coords coords, t_fdf_gen *data)
@@ -48,7 +43,7 @@ static void	bresehnam(t_coords coords, t_fdf_gen *data)
 	center_map(&coords, data);
 	isometric(&coords.x, &coords.y, coords.z, data->design);
 	isometric(&coords.x1, &coords.y1, coords.z1, data->design);
-	map_offset(data->design, &coords);
+	map_offset(data, &coords);
 	trace_line(&x_end, &y_end, &coords, data);
 }
 

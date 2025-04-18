@@ -6,7 +6,7 @@
 /*   By: lucas-do <lucas-do@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 20:12:56 by lucas-do          #+#    #+#             */
-/*   Updated: 2025/04/17 20:13:00 by lucas-do         ###   ########.fr       */
+/*   Updated: 2025/04/18 15:37:39 by lucas-do         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,11 @@
 
 void	isometric(float *x, float *y, int z, t_design *design)
 {
-	float	x_rot;
-	float	y_rot;
-	float	z_rot;
+	float	a;
 
+	a = 119.75;
+	design = (void *)design;
 	z *= design->profundity;
-	y_rot = *y * cos(design->angle_x) - z * sin(design->angle_x);
-	z_rot = *y * sin(design->angle_x) + z * cos(design->angle_x);
-	x_rot = *x * cos(design->angle_y) + z_rot * sin(design->angle_y);
-	z_rot = -*x * sin(design->angle_y) + z_rot * cos(design->angle_y);
-	*x = x_rot;
-	*y = y_rot;
+	*x = (*x * cos(a)) + (*y * cos(a + 2)) + (z * cos(a - 2));
+	*y = (*x * sin(a)) + (*y * sin(a + 2)) + (z * sin(a - 2));
 }
