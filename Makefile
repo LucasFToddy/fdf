@@ -44,11 +44,13 @@ clean:
 	rm -rf $(OBJ)
 	@make -C $(PATH_LIBFT) clean
 	@make -C $(PATH_GNL) clean
+	@make -C $(MINILIB_PATH) clean
 
 fclean:clean
 	rm -rf $(NAME)
 	@make -C $(PATH_LIBFT) fclean
 	@make -C $(PATH_GNL) fclean
+	@make -C $(MINILIB_PATH) fclean
 
 re: fclean all 
 

@@ -6,7 +6,7 @@
 /*   By: lucas-do <lucas-do@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 16:17:03 by lucas-do          #+#    #+#             */
-/*   Updated: 2024/10/03 17:58:44 by lucas-do         ###   ########.fr       */
+/*   Updated: 2025/04/20 09:10:06 by lucas-do         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ static int	clean_array(char **a, size_t i, size_t len)
 	return (0);
 }
 
-static char	**start_str(char *s, char **a, char sep)
+static char	**start_str(const char *s, char **a, char sep)
 {
 	size_t	i;
 	size_t	start;
@@ -83,7 +83,7 @@ static char	**start_str(char *s, char **a, char sep)
 	return (a);
 }
 
-char	**ft_split(char *s, char c)
+char	**ft_split(const char *s, char c)
 {
 	char	**a;
 	int		t;

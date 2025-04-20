@@ -6,13 +6,13 @@
 /*   By: lucas-do <lucas-do@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 17:19:27 by lucas-do          #+#    #+#             */
-/*   Updated: 2024/11/23 14:30:17 by lucas-do         ###   ########.fr       */
+/*   Updated: 2025/04/20 09:11:34 by lucas-do         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-size_t	ft_strlen(char *s)
+size_t	ft_strlen(const char *s)
 {
 	size_t	i;
 

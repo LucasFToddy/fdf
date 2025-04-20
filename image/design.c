@@ -6,7 +6,7 @@
 /*   By: lucas-do <lucas-do@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 20:12:47 by lucas-do          #+#    #+#             */
-/*   Updated: 2025/04/18 15:32:32 by lucas-do         ###   ########.fr       */
+/*   Updated: 2025/04/20 08:31:04 by lucas-do         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ void	initial_design(t_fdf_gen *data)
 	map_center_y = 0;
 	data->design->spacing = 4;
 	data->design->profundity = 0.8;
-	data->design->angle_x = 0.2;
-	data->design->angle_y = 0.2;
 	map_center_x = (data->data->width - 1) * data->design->spacing / 50.0;
 	map_center_y = (data->data->height - 1) * data->design->spacing / 50.0;
 	data->design->map_offset_x = (data->data->win_width / 2) - map_center_x;

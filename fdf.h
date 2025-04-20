@@ -6,7 +6,7 @@
 /*   By: lucas-do <lucas-do@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 20:14:56 by lucas-do          #+#    #+#             */
-/*   Updated: 2025/04/18 15:14:48 by lucas-do         ###   ########.fr       */
+/*   Updated: 2025/04/20 08:30:51 by lucas-do         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,8 +77,6 @@ typedef struct s_design
 	int			spacing;
 	int			map_offset_x;
 	int			map_offset_y;
-	float		angle_x;
-	float		angle_y;
 	float		profundity;
 }				t_design;
 

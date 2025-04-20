@@ -6,7 +6,7 @@
 /*   By: lucas-do <lucas-do@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 20:12:11 by lucas-do          #+#    #+#             */
-/*   Updated: 2025/04/18 15:08:28 by lucas-do         ###   ########.fr       */
+/*   Updated: 2025/04/20 08:28:44 by lucas-do         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	clear_window(t_fdf_gen *data)
 			&data->img_data->bpp, &data->img_data->size_line,
 			&data->img_data->endian);
 }
-
 
 int	init_structs(t_fdf_gen *data)
 {
@@ -54,4 +53,3 @@ int	init_mlx(t_fdf_gen *data)
 	initial_design(data);
 	return (1);
 }
-
