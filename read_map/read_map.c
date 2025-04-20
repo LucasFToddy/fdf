@@ -6,7 +6,7 @@
 /*   By: lucas-do <lucas-do@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 20:13:43 by lucas-do          #+#    #+#             */
-/*   Updated: 2025/04/18 12:48:50 by lucas-do         ###   ########.fr       */
+/*   Updated: 2025/04/20 09:58:10 by lucas-do         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,8 @@ int	read_file(char *file_name, t_fdf *data)
 	if (!data->z_matrix)
 		return (0);
 	fd = open(file_name, O_RDONLY, 0);
+	if (fd < 0)
+		return (0);
 	i = 0;
 	line = get_next_line(fd);
 	while (line != NULL)

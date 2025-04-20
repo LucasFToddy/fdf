@@ -6,7 +6,7 @@
 /*   By: lucas-do <lucas-do@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 20:22:46 by lucas-do          #+#    #+#             */
-/*   Updated: 2025/04/18 12:42:56 by lucas-do         ###   ########.fr       */
+/*   Updated: 2025/04/20 09:58:42 by lucas-do         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,8 @@ int	get_width(char *file_name)
 	int		fd;
 
 	fd = open(file_name, O_RDONLY, 0);
+	if (fd < 0)
+		return (0);
 	line = get_next_line(fd);
 	if (line == NULL)
 	{
