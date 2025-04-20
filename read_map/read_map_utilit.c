@@ -25,7 +25,6 @@ int	check_line_width_consistency(int fd, int width)
 		current_width = count_tokens(line, ' ');
 		if (current_width != width)
 		{
-			write(2, "Error: Map with wrong width.\n", 43);
 			free(line);
 			close(fd);
 			return (-1);

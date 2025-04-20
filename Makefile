@@ -11,7 +11,7 @@ MINILIB=./minilibx-linux/libmlx.a
 
 SRC = 	fdf.c \
 	read_map/read_map.c read_map/read_map_utilit.c \
-	image/set_image.c image/trace_line.c image/isometric.c image/design.c \
+	image/set_image.c image/trace_line.c image/isometric.c image/design.c image/insert_value_z.c\
 	create_clear/init_variable.c create_clear/frees.c \
 	hooks/hooks.c
 

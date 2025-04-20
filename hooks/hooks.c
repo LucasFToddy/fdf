@@ -19,7 +19,7 @@ void	move_map(t_fdf_gen *data, int keycode)
 		if (data->design->spacing <= 23)
 		{
 			data->design->spacing += 1;
-			data->design->profundity += (data->design->profundity * 0.4);
+			data->design->profundity += 0.2;
 		}
 	}
 	if (keycode == KEY_OUT)
@@ -27,7 +27,7 @@ void	move_map(t_fdf_gen *data, int keycode)
 		if (data->design->spacing >= 3)
 		{
 			data->design->spacing -= 1;
-			data->design->profundity -= (data->design->profundity * 0.4);
+			data->design->profundity -= 0.2;
 		}
 	}
 	if (keycode == KEY_UP)
